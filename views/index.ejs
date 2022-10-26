@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      const connectTo = "<%= data %>";
+    </script>
+    <script src="./assets/js/socket.io.js"></script>
+    <script src="./assets/js/index.js" defer type="module"></script>
+    <link rel="stylesheet" href="./assets/stylesheet.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="popUp">
+      <h1>You Won!</h1>
+      <button>Play Again?</button>
+    </div>
+    <div class="mppopup">
+      <h1>Other player has connected!</h1>
+      <button>Start?</button>
+    </div>
+    <div class="boardContainer">
+      <div class="circlePiece dropAnim"></div>
+      <div class="fix"></div>
+      <div class="mouseSelectors">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <img class="im1" src="./assets/img/board.png" />
+      <img class="im2" src="./assets/img/board.png" />
+      <div class="shadow">
+        <img class="im3" src="./assets/img/boardshadow.png" />
+      </div>
+    </div>
+
+    <div class="boardbase"></div>
+  </body>
+</html>

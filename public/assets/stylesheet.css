@@ -1,0 +1,276 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    width:100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(#ebb2e5,#dbe488);
+}
+.popUp{
+    position: absolute;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: #894371;
+    left:50%;
+    top:-50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 35%;
+    height: 35%;
+    border:1px solid orange;
+    border-radius: 25px;
+    z-index: 200;
+    transition: all 1s ease-in;
+}
+.mppopup{
+    position: absolute;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: #894371;
+    left:50%;
+    top:-50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 35%;
+    height: 35%;
+    border:1px solid orange;
+    border-radius: 25px;
+    z-index: 200;
+    transition: all 1s ease-in;
+}
+.boardContainer{
+    position: absolute;
+    width: auto;
+
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    perspective: 400px;
+
+
+}
+.userCircle{
+    filter: drop-shadow(0px 6px 1px #8a7db2);
+    background:linear-gradient(#9e9fe2,#9eb0e2) ;
+}
+.AICircle{
+    filter: drop-shadow(0px 6px 1px #d27272);
+    background:linear-gradient(#FF8787,#e97c7c) ;
+}
+.circlePiece{
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    top:-15%;
+    left:0px;
+    width: calc(640px/7.3);
+    height: calc(640px/7.3);
+    opacity: 1;
+    /* transform: translateX(-325%); */
+    z-index: -1;
+    border-radius: 100%;
+
+    transition:transform 1s cubic-bezier(1, 0.5, 0.7, 1.0);
+    transform: translateY(0%);
+
+}
+.dropped1{
+    transform: translateY(710%);
+}
+.dropped2{
+    transform: translateY(600%);
+}
+.dropped3{
+    transform: translateY(490%);
+}
+.dropped4{
+    transform: translateY(370%);
+}
+.dropped5{
+    transform: translateY(250%);
+}
+.dropped6{
+    transform: translateY(140%);
+}
+.dropped7{
+    transform: translateY(370%);
+}
+.shadow div{
+    opacity: 0;
+}
+
+/* rotateX(60deg) scale(0.58) skewX(50deg); */
+.dropped1.shadowCircle{
+
+    transform:translateY(490%);
+    opacity: 1;
+    animation: shadowFade 1s ease;
+}
+.dropped2.shadowCircle{
+    transform:translateY(380%);
+    opacity: 0.85;
+    animation: shadowFade2 1s ease;
+}
+.dropped3.shadowCircle{
+    transform:translateY(270%) ;
+    opacity: 0.55;
+    animation: shadowFade3 1s ease;
+}
+.dropped4.shadowCircle{
+    transform: translateY(160%);
+    opacity: 0.25;
+    animation: shadowFade4 1s ease;
+}
+.dropped5.shadowCircle{
+    transform: translateY(60%);
+    opacity: 0.05;
+
+}
+.dropped6.shadowCircle{
+    opacity: 0;
+    display: none;
+}
+.dropped7.shadowCircle{
+    opacity: 0;
+    display: none;
+}
+
+.boardbase{
+    width:200vw;
+    height:120vh;
+    position: absolute;
+    top:50%;
+    left:50%;
+    z-index: -5;
+    transform: rotateX(60deg) translateY(-50%) translateX(-50%);
+    background:linear-gradient(#b2e8eb,#BCE29E);
+}
+.boardContainer img{
+    position: relative;
+    z-index: 5;
+    pointer-events: none;
+
+}
+.mouseSelectors{
+    position: absolute;
+    display: flex;
+    height: 190vh;
+    top:50%;
+    transform: translateY(-50%);
+    width: 100%;
+
+}
+.mouseSelectors div{
+    width:17%;
+    height:100%;
+
+    z-index: 3000;
+    pointer-events: all;
+}
+.boardContainer .fix{
+    position: absolute;
+    background-color: #894371;
+
+    width: 100%;
+    top:100%;
+    height: 5%;
+    transform: translateY(-75%);
+    z-index: 20;
+    pointer-events: none;
+}
+.boardContainer img:nth-child(4){
+    z-index: 1;
+}
+.boardContainer img:nth-child(5){
+    position: absolute;
+    top:0;
+    left:0;
+    filter: drop-shadow(1px 9px 0px #793b63);
+    z-index: -2 !important;
+    pointer-events: none;
+}
+
+
+.shadow{
+    position: absolute;
+    top:16%;
+    left:-31%;
+    filter: blur(12px) contrast(0%) brightness(0%);
+    opacity: 0.4;
+
+    transform: rotateX(60deg) scale(0.58) skewX(50deg);
+    pointer-events: none;
+    z-index: -4;
+}
+.shadowCircle{
+    position: absolute;
+    top:16%;
+    left:-31%;
+    filter: blur(12px) contrast(0%) brightness(0%);
+    opacity: 0.2;
+
+    transform: scale(0.58) skewX(5deg);
+    pointer-events: none;
+    z-index: -4;
+}
+
+.selectionArrow{
+    position: absolute;
+    top:20px;
+    left:0;
+    pointer-events: none;
+    animation: arrowPulse 1s ease infinite;
+}
+@keyframes arrowPulse {
+    50%{
+        transform: scale(1.2);
+    }
+
+}
+@keyframes shadowFade {
+    0%{
+
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+
+}
+@keyframes shadowFade2 {
+    0%{
+
+        opacity: 0;
+    }
+    100%{
+        opacity: 0.8;
+    }
+
+}
+@keyframes shadowFade3 {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0.5;
+    }
+
+}
+@keyframes shadowFade4 {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0.2;
+    }
+
+}
+.dropAnim{
+    animation: circlePieceDrop 1s ease infinite;
+}
+@keyframes circlePieceDrop {
+    50%{
+        transform: translateY(10%);
+    }
+
+}
